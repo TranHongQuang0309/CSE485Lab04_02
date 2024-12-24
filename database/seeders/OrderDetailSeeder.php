@@ -14,11 +14,11 @@ class OrderDetailSeeder extends Seeder
     {
         $faker = Faker::create();
         
-        // Lấy số lượng bản ghi hiện có trong bảng orders và products
+        
         $orderCount = DB::table('orders')->count();
         $productCount = DB::table('products')->count();
 
-        foreach (range(1, 150) as $index) {
+        foreach (range(1, 100) as $index) {
             DB::table('order_details')->insert([
                 'order_id' => $faker->numberBetween(1, $orderCount),  
                 'product_id' => $faker->numberBetween(1, $productCount), 

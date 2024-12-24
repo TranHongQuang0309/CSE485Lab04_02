@@ -18,7 +18,7 @@ class OrderSeeder extends Seeder
      {
         $faker = Faker::create();
         $customerCount = DB::table('customers')->count();
-        foreach (range(1, 200) as $index) {
+        foreach (range(1, 100) as $index) {
             DB::table('orders')->insert([
                 'customer_id' => $faker->numberBetween(1, $customerCount),
                 'order_date' => $faker->date('Y-m-d'),
